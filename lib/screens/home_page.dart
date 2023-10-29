@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstudy/models/model.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -7,26 +8,19 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, '/welcome');
-          },
-          child: Container(
-              height: 200,
-              width: 200,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(12)),
-                color: Colors.purple,
-              ),
-              child: const Center(
-                child: Text(
-                  'Home',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
+        child: ListView(
+          children: [
+            for (int i = 0; i < users.length; i++)
+              ListTile(
+                shape: Border.all(width: 2.0, color: Colors.black45),
+                leading: CircleAvatar(
+                  child: Image.asset(users[i]['image']),
                 ),
-              )),
+                title: Text('${users[i]['name']}'),
+                subtitle: Text('${users[i]['email']}'),
+                trailing: Text('${TimeOfDay.now().format(context)}'),
+              ),
+          ],
         ),
       ),
     );

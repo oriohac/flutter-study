@@ -11,8 +11,8 @@ class Detail extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Detail',textAlign: TextAlign.center,),
-            Image.asset('lib/images/real.png',scale: 5,)
+            Text('Detail Page, I will apply a font on this!!!',style: TextStyle(fontFamily: 'Satoshi', fontSize: 24),textAlign: TextAlign.center,),
+            
           ],
         ),
       ),

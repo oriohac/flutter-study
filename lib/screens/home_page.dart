@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
                 ),
                 title: Text('${users[i]['name']}'),
                 subtitle: Text('${users[i]['email']}'),
-                trailing: Text('${TimeOfDay.now().format(context)}'),
+                trailing: Text(TimeOfDay.now().format(context)),
               ),
           ],
         ),

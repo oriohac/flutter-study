@@ -10,35 +10,31 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 Future<void> main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+      );
   runApp(const NavigationApp());
-   await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
 }
 
 class NavigationApp extends StatelessWidget {
   const NavigationApp({super.key});
- 
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/home':(context) => const Home(),
-        '/profile':(context) =>  Profile(),
-        '/detail':(context) => const Detail(),
-        '/login':(context) => const Login(),
-        '/signup':(context) => const Signup(),
-        '/start':(context) =>  Start(),
-        '/welcome':(context) => const Welcome(),
-
+        '/home': (context) => const Home(),
+        '/profile': (context) => const Profile(),
+        '/detail': (context) => const Detail(),
+        '/login': (context) => const Login(),
+        '/signup': (context) => const Signup(),
+        '/start': (context) => Start(),
+        '/welcome': (context) => const Welcome(),
       },
       debugShowCheckedModeBanner: false,
       home: const Welcome(),
-      theme: ThemeData(
-        
-      ),
+      theme: ThemeData(),
     );
   }
- 
 }

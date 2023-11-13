@@ -11,7 +11,7 @@ class Start extends StatefulWidget {
 }
 
 class _StartState extends State<Start> {
-  final List _screenList = [Home(), Profile(), Detail()];
+  final List _screenList = [const Home(), const Profile(), const Detail()];
 
   int selectedScreen = 0;
 
@@ -25,32 +25,32 @@ class _StartState extends State<Start> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 141, 90, 150),
+        backgroundColor: const Color.fromARGB(255, 141, 90, 150),
         elevation: 0,
       ),
       body: _screenList[selectedScreen],
       drawer: Drawer(
-        backgroundColor: Color.fromARGB(255, 143, 102, 151),
+        backgroundColor: const Color.fromARGB(255, 143, 102, 151),
         child: Column(children: [
-          DrawerHeader(
+          const DrawerHeader(
               child: Icon(
             Icons.add_task_rounded,
             color: Colors.white54,
             size: 60,
           )),
-          Divider(
+          const Divider(
             color: Colors.black,
           ),
           ListTile(
             onTap: () {
               Navigator.pushNamed(context, '/home');
             },
-            leading: Icon(
+            leading: const Icon(
               Icons.home,
               color: Colors.white,
               size: 28,
             ),
-            title: Text(
+            title: const Text(
               'H O M E',
               style: TextStyle(
                   color: Colors.white,
@@ -58,19 +58,19 @@ class _StartState extends State<Start> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          Divider(
+          const Divider(
             color: Colors.black,
           ),
           ListTile(
             onTap: () {
               Navigator.pushNamed(context, '/profile');
             },
-            leading: Icon(
+            leading: const Icon(
               Icons.person,
               color: Colors.white,
               size: 28,
             ),
-            title: Text(
+            title: const Text(
               'P R O F I L E',
               style: TextStyle(
                   color: Colors.white,
@@ -78,19 +78,19 @@ class _StartState extends State<Start> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          Divider(
+          const Divider(
             color: Colors.black,
           ),
           ListTile(
             onTap: () {
               Navigator.pushNamed(context, '/detail');
             },
-            leading: Icon(
+            leading: const Icon(
               Icons.info,
               color: Colors.white,
               size: 28,
             ),
-            title: Text(
+            title: const Text(
               'D E T A I L',
               style: TextStyle(
                   color: Colors.white,
@@ -98,13 +98,13 @@ class _StartState extends State<Start> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          Divider(
+          const Divider(
             color: Colors.black,
           ),
         ]),
       ),
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white70,
+          backgroundColor: Color.fromARGB(179, 11, 3, 83),
           onTap: currentScreen,
           currentIndex: selectedScreen,
           items: const [

@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutterstudy/screens/detail_page.dart';
 import 'package:flutterstudy/screens/home_page.dart';
 import 'package:flutterstudy/screens/profile_page.dart';
+import 'package:flutterstudy/screens/users_page.dart';
 
 class Start extends StatefulWidget {
-  Start({super.key});
+  const Start({super.key});
 
   @override
   State<Start> createState() => _StartState();
 }
 
 class _StartState extends State<Start> {
-  final List _screenList = [const Home(), const Profile(), const Detail()];
+  final List _screenList = [const Home(), const Profile(), const Detail(), const UserData()];
 
   int selectedScreen = 0;
 
@@ -104,7 +105,7 @@ class _StartState extends State<Start> {
         ]),
       ),
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color.fromARGB(179, 11, 3, 83),
+          backgroundColor: Colors.black,
           onTap: currentScreen,
           currentIndex: selectedScreen,
           items: const [
@@ -128,6 +129,13 @@ class _StartState extends State<Start> {
                 size: 32,
               ),
               label: 'DETAIL',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.verified_user_sharp,
+                size: 32,
+              ),
+              label: 'USERS',
             )
           ]),
     );

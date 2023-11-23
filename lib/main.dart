@@ -5,6 +5,7 @@ import 'package:flutterstudy/screens/login_page.dart';
 import 'package:flutterstudy/screens/profile_page.dart';
 import 'package:flutterstudy/screens/signup_page.dart';
 import 'package:flutterstudy/screens/start_page.dart';
+import 'package:flutterstudy/screens/users_page.dart';
 import 'package:flutterstudy/screens/welcome_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -29,11 +30,12 @@ class NavigationApp extends StatelessWidget {
         '/detail': (context) => const Detail(),
         '/login': (context) => const Login(),
         '/signup': (context) => const Signup(),
-        '/start': (context) => Start(),
+        '/start': (context) => const Start(),
         '/welcome': (context) => const Welcome(),
+        '/users':(context) => const UserData(),
       },
       debugShowCheckedModeBanner: false,
-      home: const Welcome(),
+      home: const Start(),
       theme: ThemeData(),
     );
   }
